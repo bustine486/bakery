@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Crust Bakery | Freshly Baked</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <header class="navbar">
+    <a class="logo" href="#home">
+      <img src="{{ url_for('static', filename='images/logem.png') }}" alt="Gem's Bakery">
+      Gem's Bakery
+    </a>
+    <nav id="navMenu">
+      <a href="#home">Home</a>
+      <a href="#history">History</a>
+      <a href="#products">Products</a>
+      <a href="#mission">Mission & Vision</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About Us</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="themeBtn" class="icon-btn" type="button" aria-label="Toggle theme">
+        🌙
+      </button>
+      <button id="cartBtn" class="cart-btn" type="button">
+        🛒 <span id="cartCount">0</span>
+      </button>
+      <button id="menuBtn" class="menu-btn" type="button" aria-label="Open menu">
+        ☰
+      </button>
+    </div>
+  </header>
+  <main>
+
+    <!-- =========================
+         HOME
+    ========================== -->
+
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">
+          FRESH FROM OUR OVEN
+        </p>
+        <h1>
+          GEM'S<br>
+          <span>BAKERY</span>
+        </h1>
+        <p>
+          Handcrafted breads, pastries, and sweet treats baked fresh
+          every day with quality ingredients and a whole lot of love.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn primary" href="#products">
+            Shop Our Bread
+          </a>
+          <a class="btn secondary" href="#history">
+            Our Story
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <strong>100%</strong>
+            <small>Freshly Baked</small>
+          </div>
+          <div>
+            <strong>10+</strong>
+            <small>Bakery Favorites</small>
+          </div>
+          <div>
+            <strong>7 AM</strong>
+            <small>Oven Fresh Daily</small>
+          </div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="story-visual">
+          <img src="{{ url_for('static', filename='images/bakery.jpg') }}">
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         HISTORY
+    ========================== -->
+
+    <section id="history" class="section story">
+      <div class="section-heading">
+        <p class="eyebrow">
+          OUR BACKGROUND
+        </p>
+        <h2>
+          A tradition baked with heart.
+        </h2>
+      </div>
+
+      <div class="story-grid">
+        <div class="story-visual">
+          <img src="{{ url_for('static', filename='images/bakery.jpg') }}"
+            alt="Golden Crust Bakery History">
+          <span>
+            Est. 1993
+          </span>
+        </div>
+
+        <div class="story-copy">
+          <h3>
+            A tradition that began in 1993
+          </h3>
+
+          <p>
+            GEM'S Bakery began in 1993 with a simple
+            passion for baking fresh, delicious bread using
+            traditional methods. What started as a humble
+            bakery grew through the support of the local
+            community and the familiar taste of freshly baked
+            Filipino favorites.
+          </p>
+
+          <p>
+            Through the years, we have remained committed to
+            preserving the taste and tradition of local
+            baking. From freshly baked pandesal to other
+            beloved bakery treats, every product reflects
+            our dedication to quality, tradition, and the
+            generations of customers who have supported us.
+          </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         PRODUCTS
+    ========================== -->
+
+    <section id="products" class="section products-section">
+      <div class="section-heading center">
+        <p class="eyebrow">
+          BAKERY SHOP
+        </p>
+        <h2>
+          Fresh Favorites
+        </h2>
+        <p>
+          Hover over a product to learn more,
+          then add your favorites to the cart.
+        </p>
+      </div>
+      <div class="product-grid">
+        <!-- PRODUCT 1 -->
+        <div class="product-card">
+          <img src="{{ url_for('static', filename='images/StarBread.jpg') }}" alt="Star Bread">
+          <div class="product-overlay">
+            <div class="product-info">
+              <h3>
+                Star Bread
+              </h3>
+              <p>
+                A soft, sweet bread shaped like a star,
+                perfect for enjoying as a classic bakery treat.
+              </p>
+              <strong>
+                ₱10.00
+              </strong>
+              <button class="add-cart" type="button" data-id="1" data-name="Star Bread" data-price="10">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- PRODUCT 2 -->
+        <div class="product-card">
+          <img src="{{ url_for('static', filename='images/Ensaymada.jpg') }}" alt="Ensaymada">
+          <div class="product-overlay">
+            <div class="product-info">
+              <h3>
+                Ensaymada
+              </h3>
+              <p>
+                A soft, buttery Filipino pastry topped with
+                sweet sugar and grated cheese.
+              </p>
+              <strong>
+                ₱10.00
+              </strong>
+              <button class="add-cart" type="button" data-id="2" data-name="Ensaymada" data-price="10">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- PRODUCT 3 -->
+        <div class="product-card">
+          <img src="{{ url_for('static', filename='images/ToastedSiopao.jpg') }}" alt="Toasted Siopao ">
+          <div class="product-overlay">
+            <div class="product-info">
+              <h3>
+                Toasted Siopao
+              </h3>
+              <p>
+                A toasted Filipino steamed bun filled with
+                savory meat and a hint of sweetness.
+              </p>
+              <strong>
+                ₱15.00
+              </strong>
+              <button class="add-cart" type="button" data-id="3" data-name="Toasted Siopao" data-price="15">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- PRODUCT 4 -->
+        <div class="product-card">
+          <img src="{{ url_for('static', filename='images/Spanish-Bread.jpg') }}" alt="Spanish Bread">
+          <div class="product-overlay">
+            <div class="product-info">
+              <h3>
+                Spanish Bread
+              </h3>
+              <p>
+                A soft, sweet bread with a buttery filling,
+                rolled in sugar for a delightful treat.
+              </p>
+              <strong>
+                ₱10.00
+              </strong>
+              <button class="add-cart" type="button" data-id="4" data-name="Spanish Bread" data-price="10">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- PRODUCT 5 -->
+        <div class="product-card">
+          <img src="{{ url_for('static', filename='images/Pandesiosa.jpg') }}" alt="Pandesiosa">
+          <div class="product-overlay">
+            <div class="product-info">
+              <h3>
+                Pandesiosa
+              </h3>
+              <p>
+                A soft, slightly sweet Filipino bakery bread
+                with a delicate texture and a golden crust.
+              </p>
+              <strong>
+                ₱7.00
+              </strong>
+              <button class="add-cart" type="button" data-id="5" data-name="Pandesiosa" data-price="7">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- PRODUCT 6 -->
+        <div class="product-card">
+          <img src="{{ url_for('static', filename='images/Pandesal.jpg') }}" alt="Pandesal">
+          <div class="product-overlay">
+            <div class="product-info">
+              <h3>
+                Pandesal
+              </h3>
+              <p>
+                A Filipino breakfast favorite with a soft,
+                fluffy center and a lightly crisp, breadcrumb-coated crust.
+              </p>
+              <strong>
+                ₱6.00
+              </strong>
+              <button class="add-cart" type="button" data-id="6" data-name="Pandesal" data-price="6">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- PRODUCT 7 -->
+        <div class="product-card">
+          <img src="{{ url_for('static', filename='images/cheeseRoll.jpg') }}" alt="Cheese Roll">
+          <div class="product-overlay">
+            <div class="product-info">
+              <h3>
+                Cheese Roll
+              </h3>
+              <p>
+                A cheese roll is a soft, fluffy log-shaped yeast bread filled with melty cheese and finished with a sweet buttery
+                topping
+              </p>
+              <strong>
+                ₱15.00
+              </strong>
+              <button class="add-cart" type="button" data-id="7" data-name="Cheese Roll" data-price="15">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="{{ url_for('static', filename='images/pancho.jpg') }}" alt="Pancho">
+          <div class="product-overlay">
+            <div class="product-info">
+              <h3>
+                Pancho
+              </h3>
+              <p>
+                a classic Filipino sweet bread roll
+              </p>
+              <strong>
+                ₱10.00
+              </strong>
+              <button class="add-cart" type="button" data-id="8" data-name="Pancho" data-price="10">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="{{ url_for('static', filename='images/tren.jpg') }}" alt="Tren">
+          <div class="product-overlay">
+            <div class="product-info">
+              <h3>
+                Teren teren
+              </h3>
+              <p>
+                a classic, inexpensive local sweet bread
+              </p>
+              <strong>
+                ₱10.00
+              </strong>
+              <button class="add-cart" type="button" data-id="9" data-name="Tren" data-price="10">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="{{ url_for('static', filename='images/hapmon.jpg') }}" alt="Hapmon">
+          <div class="product-overlay">
+            <div class="product-info">
+              <h3>
+                Half Moon
+              </h3>
+              <p>
+                a soft, lightly sweet roll shaped like a semicircle or crescent.
+              </p>
+              <strong>
+                ₱7.00
+              </strong>
+              <button class="add-cart" type="button" data-id="10" data-name="Half Moon" data-price="7">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- =========================
+         MISSION & VISION
+    ========================== -->
+
+    <section id="mission" class="section mission-section">
+      <div class="section-heading center">
+        <p class="eyebrow">
+          WHAT WE STAND FOR
+        </p>
+      </div>
+      <div class="mission-grid">
+        <article class="mission-card">
+          <h3>
+            Our Mission
+          </h3>
+          <p>
+            To create fresh, delicious, and affordable baked goods
+            while giving every customer a warm and memorable
+            bakery experience.
+          </p>
+        </article>
+        <article class="mission-card">
+          <h3>
+            Our Vision
+          </h3>
+          <p>
+            To become a trusted local bakery known for quality,
+            creativity, community, and the simple joy of
+            freshly baked bread.
+          </p>
+        </article>
+      </div>
+    </section>
+    <!-- =========================
+             CONTACT
+        ========================== -->
+    
+    <section id="contact" class="section contact-section">
+      <div class="section-heading center">
+        <p class="eyebrow">
+          GET IN TOUCH
+        </p>
+        <h2>
+          Visit or message us
+        </h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span>📍</span>
+            <div>
+              <b>
+                Our Location
+              </b>
+              <p>
+                Golden Crust Bakery<br>
+                Mandurriao, Iloilo City, Philippines
+              </p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>📞</span>
+            <div>
+              <b>
+                Phone
+              </b>
+              <p>
+                +63 912 345 6789
+              </p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>✉️</span>
+            <div>
+              <b>
+                Email
+              </b>
+              <p>
+                justinetolosa06@gmail.com
+              </p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>🕐</span>
+            <div>
+              <b>
+                Opening Hours
+              </b>
+              <p>
+                Monday–Sunday:
+                7:00 AM – 8:00 PM
+              </p>
+            </div>
+          </div>
+          <form id="contactForm" action="/contact" method="POST">
+            <input type="hidden" name="_subject" value="New message from Golden Crust Bakery website">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+            <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea>
+            <button class="btn primary" type="submit">
+              Send Message
+            </button>
+          </form>
+        </div>
+        <!-- GOOGLE MAP -->
+        <div class="map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!4v1790349570924!6m8!1m7!1s1VXSwFSClwmHVvELhCTUAQ!2m2!1d10.72396298581377!2d122.5424930531369!3f345.3504892956205!4f-18.19587528937636!5f0.7820865974627469"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=10.72396298581377,122.5424930531369"
+            target="_blank" rel="noopener">
+            Open in Google Maps ↗
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- =========================
+         ABOUT US
+    ========================== -->
+
+    <section id="about" class="section about-section">
+      <div class="section-heading center">
+        <p class="eyebrow">
+          MEET OUR TEAM
+        </p>
+        <h2>
+          About Us
+        </h2>
+        <p>
+          Meet the Six members behind our System.
+        </p>
+      </div>
+      <div class="members-grid">
+        <!-- MEMBER 1 -->
+        <div class="member-card">
+          <img src="{{ url_for('static', filename='images/juschar.png') }}" alt="Justine Tolosa">
+          <div class="member-overlay">
+            <div class="member-info">
+              <h3>
+                JUSTINE TOLOSA
+              </h3>
+              <p>
+                MANDURRIAO, ILOILO CITY
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- MEMBER 2 -->
+        <div class="member-card">
+          <img src="{{ url_for('static', filename='images/Molester.jpg') }}" alt="John Lester Jamandre">
+          <div class="member-overlay">
+            <div class="member-info">
+              <h3>
+                JOHN LESTER JAMANDRE
+              </h3>
+              <p>
+                SAN MIGUEL, ILOILO
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- MEMBER 3 -->
+        <div class="member-card">
+          <img src="{{ url_for('static', filename='images/hanger.png') }}" alt="Hans Christian Limsiaco">
+          <div class="member-overlay">
+            <div class="member-info">
+              <h3>
+                HANS CHRISTIAN LIMSIACO
+              </h3>
+              <p>
+                LAPUZ, ILOILO CITY
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- MEMBER 4 -->
+        <div class="member-card">
+          <img src="{{ url_for('static', filename='images/kalborat.jpg') }}" alt="Christian Mark Canggas">
+          <div class="member-overlay">
+            <div class="member-info">
+              <h3>
+                CHRISTIAN MARK CANGGAS
+              </h3>
+              <p>
+                OTON, ILOILO CITY
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- MEMBER 5 -->
+        <div class="member-card">
+          <img src="{{ url_for('static', filename='images/Jecilyn.jpg') }}" alt="Jecilyn Calambro">
+          <div class="member-overlay">
+            <div class="member-info">
+              <h3>
+                JECILYN CALAMBRO
+              </h3>
+              <p>
+                TIMAWA, ILOILO CITY
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="member-card">
+          <img src="{{ url_for('static', filename='images/Ashley.jpg') }}" alt="Ashley Villanueva">
+          <div class="member-overlay">
+            <div class="member-info">
+              <h3>
+                ASHLEY VILLANUEVA
+              </h3>
+              <p>
+                LAPAZ, ILOILO CITY
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+    <div>
+      <a class="logo" href="#home">
+        Gem's Bakery
+      </a>
+      <p>
+        Freshly baked. Made with love.
+      </p>
+    </div>
+    <p>
+      © <span id="year"></span>
+      Gem's Bakery.
+      All rights reserved.
+    </p>
+  </footer>
+
+  <!-- =========================
+       CART
+  ========================== -->
+
+  <aside id="cartPanel" class="cart-panel">
+    <div class="cart-head">
+      <h2>
+        Your Cart
+      </h2>
+      <button id="closeCart" type="button" aria-label="Close cart">
+        ✕
+      </button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <button id="checkoutBtn" class="btn primary full" type="button">
+      Checkout
+    </button>
+  </aside>
+  <!-- =========================
+       CHECKOUT MODAL
+  ========================== -->
+  <div id="checkoutModal" class="checkout-modal">
+    <div class="checkout-box">
+      <button id="closeCheckout" class="checkout-close" type="button" aria-label="Close checkout">
+        ✕
+      </button>
+      <p class="eyebrow">
+        ORDER DETAILS
+      </p>
+      <h2>
+        Checkout
+      </h2>
+      <p class="checkout-description">
+        Please enter your information before placing your order.
+      </p>
+      <div class="checkout-form">
+        <label for="customerName">
+          Your Name
+        </label>
+        <input type="text" id="customerName" placeholder="Enter your name" autocomplete="name">
+        <label for="customerEmail">
+          Email Address
+        </label>
+        <input type="email" id="customerEmail" placeholder="Enter your email" autocomplete="email">
+        <label for="customerPhone">
+          Phone Number
+        </label>  
+        <input type="tel" id="customerPhone" placeholder="Enter your phone number" autocomplete="tel">
+      </div>
+      <div class="checkout-actions">
+        <button id="cancelCheckout" class="btn secondary" type="button">
+          Cancel
+        </button>
+        <button id="placeOrderBtn" class="btn primary" type="button">
+          Place Order
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- OVERLAY -->
+  <div id="overlay"></div>
+  <!-- TOAST -->
+  <div id="toast" class="toast"></div>
+  <!-- JAVASCRIPT -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
